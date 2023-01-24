@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import {
   useFonts,
   Inter_400Regular,
@@ -6,7 +6,8 @@ import {
   Inter_500Medium,
   Inter_800ExtraBold,
 } from "@expo-google-fonts/inter";
-import { Loading } from "./assets/src/components/Loading";
+import { Loading } from "./src/components/Loading";
+import { Home } from "./src/screens/Home";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,22 +20,13 @@ export default function App() {
     return <Loading />;
   }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
+      <Home />
       <StatusBar
         barStyle="light-content"
         backgroundColor={"transparent"}
         translucent
       />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#09090a",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
